@@ -44,7 +44,9 @@ jobs:
     - name: "Linux, Py3.6"
       python: "3.6"
       env: TEST_PKG="conda" BLA_VENDOR="OpenBLAS"
-
+  allowed_fails:
+    - os: MacOSX
+      env: TEST_PKG="conda" BLA_VENDOR="Apple"
 
 before_install:
   - |
@@ -143,7 +145,7 @@ install:
 script:
   # slycots own unit tests as installed, not from source dir
   - cd ..
-  - slycot_dir=$(python -c "import slycot; print(*slycot.__path__)")
+  - slycot_dir=$(python -c "import slycot; print(slycot.__path__[0])")
   - pytest --pyargs slycot --cov=$slycot_dir --cov-config=Slycot/.coveragerc
   #
   # As a deeper set of tests, get test against python-control as well
