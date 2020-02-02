@@ -141,9 +141,11 @@ install:
 
 
 script:
-  # Local unit tests
+  # Local unit tests: Move them out of source file so that the system installed
+  # slycot package including the wrapper is imported and tested
+  - cp -r slycot/tests ../slycot-tests
   - cd ..
-  - pytest Slycot/slycot/tests --cov
+  - pytest slycot-tests --cov
   #
   # As a deeper set of tests, get test against python-control as well
   #
