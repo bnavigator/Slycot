@@ -92,8 +92,8 @@ install:
       elif [[ $TRAVIS_OS_NAME == osx ]]; then
         wget http://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh
         wget https://github.com/phracker/MacOSX-SDKs/releases/download/10.15/MacOSX10.9.sdk.tar.xz
-        mkdir -p /opt/MacOSX10.9.sdk
-        tar -C /opt/MacOSX10.9.sdk -xJf MacOSX10.9.sdk.tar.xz
+        sudo mkdir -p /opt/MacOSX10.9.sdk
+        sudo tar -C /opt/MacOSX10.9.sdk -xJf MacOSX10.9.sdk.tar.xz
       else
         echo "Unsupported OS for conda builds: TRAVIS_OS_NAME"
         exit 4
@@ -141,11 +141,8 @@ install:
 
 
 script:
-  # Local unit tests: Move them out of source file so that the system installed
-  # slycot package including the wrapper is imported and tested
-  - cp -r slycot/tests ../slycot-tests
-  - cd ..
-  - pytest slycot-tests --cov
+  # slycots own unit tests as installed, not from source dir
+  - pytest --pyargs slycot --cov
   #
   # As a deeper set of tests, get test against python-control as well
   #
