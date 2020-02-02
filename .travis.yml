@@ -142,7 +142,9 @@ install:
 
 script:
   # slycots own unit tests as installed, not from source dir
-  - pytest --pyargs slycot --cov
+  - cd ..
+  - slycot_dir=$(python -c "import slycot; print(*slycot.__path__)")
+  - pytest --pyargs slycot --cov=$slycot_dir --cov-config=Slycot/.coveragerc
   #
   # As a deeper set of tests, get test against python-control as well
   #
