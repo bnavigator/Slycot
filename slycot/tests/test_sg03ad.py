@@ -7,11 +7,9 @@ import unittest
 from slycot import synthesis
 import numpy as np
 
-from numpy.testing import assert_almost_equal
-
 # test cases from
 # Penzl T., Numerical Solution of Generalized Lyapunov Equations
-# http://www.qucosa.de/fileadmin/data/qucosa/documents/4168/data/b002.pdf
+# https://nbn-resolving.org/urn:nbn:de:bsz:ch1-199800893
 
 
 class test_sg03ad(unittest.TestCase):
@@ -29,7 +27,7 @@ class test_sg03ad(unittest.TestCase):
             Z = np.zeros((n, n))
             A, E, Q, Z, X, scale, sep, ferr, alphar, alphai, beta = \
                 synthesis.sg03ad('C', 'B', 'N', 'N', 'L', n, A, E, Q, Z, Y)
-            assert_almost_equal(X, Xref)
+            assert np.linalg.norm(X-Xref)/n < ferr
 
     def test_sg03ad_ex1d(self):
         """ Example 1 discrete case"""
@@ -44,7 +42,7 @@ class test_sg03ad(unittest.TestCase):
             Z = np.zeros((n, n))
             A, E, Q, Z, X, scale, sep, ferr, alphar, alphai, beta = \
                 synthesis.sg03ad('D', 'B', 'N', 'N', 'L', n, A, E, Q, Z, Y)
-            assert_almost_equal(X, Xref)
+            assert np.linalg.norm(X-Xref)/n < ferr
 
     def test_sg03ad_b1(self):
         """ SLICOT doc example / Penzl B.1 """
@@ -65,8 +63,7 @@ class test_sg03ad(unittest.TestCase):
         Z = np.zeros((3, 3))
         A, E, Q, Z, X, scale, sep, ferr, alphar, alphai, beta = \
             synthesis.sg03ad('C', 'B', 'N', 'N', 'L', n, A, E, Q, Z, -Y)
-        # print(A, E, Q, Z, X, scale, sep)
-        assert_almost_equal(X, Xref)
+        assert np.linalg.norm(X-Xref)/n < ferr
 
 
 if __name__ == "__main__":
