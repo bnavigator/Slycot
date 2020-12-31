@@ -125,7 +125,8 @@ install:
       conda activate test-environment
       export LIBRARY_PATH="$HOME/miniconda/envs/test-environment/lib"
       conda build --python "$SLYCOT_PYTHON_VERSION" $conda_recipe
-      conda install local::slycot
+      slycot_pkg=$(find $CONDA_PREFIX -name 'slycot*.tar.bz2')
+      conda install --use-local $slycot_pkg
     elif [[ $TEST_PKG == dist ]]; then
       pip install scikit-build pytest-cov matplotlib scipy;
       CMAKE_GENERATOR="Unix Makefiles" python setup.py install;
