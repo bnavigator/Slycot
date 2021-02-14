@@ -599,8 +599,8 @@ src/SLICOT-Reference/src/UE01MD.f
 src/SLICOT-Reference/src/delctg.f
 src/SLICOT-Reference/src/select.f
 
-src/SLICOT-Reference/src/SLCT_DLATZM.f
-src/SLICOT-Reference/src/SLCT_ZLATZM.f
+#src/SLICOT-Reference/src/SLCT_DLATZM.f
+#src/SLICOT-Reference/src/SLCT_ZLATZM.f
 
 )
 
