@@ -84,7 +84,7 @@ Getting the full source code
 Get it from PyPI
 ^^^^^^^^^^^^^^^^
 
-Get the source code of the latest release is available from `PyPI`_ It
+Get the source code of the latest release is available from `PyPI`_. It
 contains both the Python to Fortran wrappers as well as the SLICOT-Reference
 Fortran sources.
 
@@ -95,7 +95,7 @@ Get it from GitHub archives
 
 If you decide to download a source code archive from GitHub (tagged release or
 a specific branch), you also have to get the correct version of our
-SLICOT-Reference fork and place it into slycot/src/SLICOT-Reference:
+SLICOT-Reference fork and place it into ``slycot/src/SLICOT-Reference``:
  
 1. Download and unpack https://github.com/python-control/Slycot/archive/master.zip
 2. Go to https://github.com/python-control/Slycot/master/slycot/src
@@ -105,7 +105,7 @@ SLICOT-Reference fork and place it into slycot/src/SLICOT-Reference:
 5. Unpack the contents of the SLICOT-Reference archive into
    ``slycot/src/SLICOT-Reference``
 
-Replace ``master`` with the release tag or branch name which you want to build.
+Replace ``master`` with the release tag or branch name, which you want to build.
 
 Clone the git repository
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -118,7 +118,7 @@ or if you forked the repository::
 
     git clone --recurse-submodules https://github.com/<your-username>/Slycot.git
 
-If you already have a local checkout, but stikk need to init the submodule::
+If you already have a local checkout, but still need to init the submodule::
 
     git submodule init
     git submodule update
