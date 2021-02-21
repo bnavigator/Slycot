@@ -69,16 +69,6 @@ from the conda-forge channel with the following command::
 Compiling from source
 ---------------------
 
-Prerequisites
-~~~~~~~~~~~~~
-
-You need:
-- a Fortran compiler
-- library and headers for a BLAS/LAPACK implementation
-- scikit-build
-- CMake
-- NumPy including F2PY
-
 The hardest part about installing from source is getting a working
 version of FORTRAN and LAPACK (provided by OpenBLAS, MKL, etc.)
 installed on your system. Depending on where you get your NumPy and SciPy
@@ -94,7 +84,7 @@ Getting the full source code
 Get it from PyPI
 ^^^^^^^^^^^^^^^^
 
-Get the source code of the latest release is available from `PyPI`._ It
+Get the source code of the latest release is available from `PyPI`_ It
 contains both the Python to Fortran wrappers as well as the SLICOT-Reference
 Fortran sources.
 
@@ -109,25 +99,26 @@ SLICOT-Reference fork and place it into slycot/src/SLICOT-Reference:
  
 1. Download and unpack https://github.com/python-control/Slycot/archive/master.zip
 2. Go to https://github.com/python-control/Slycot/master/slycot/src
-3. Follow the link of ``SLICOT-Reference @ <commit-id>`
-4. Download the archive of SLICOT reference from the Download button
-   (https://github.com/python-control/SLICOT-Reference/archive/<commit-id>.zip)
-5. Unpack the contents of the SLICOT-Reference archive into slycot/src/SLICOT-Reference
+3. Follow the link of ``SLICOT-Reference @ <commit-id>``
+4. Download the archive of SLICOT-Reference from the Code download button
+   (``https://github.com/python-control/SLICOT-Reference/archive/<commit-id>.zip``)
+5. Unpack the contents of the SLICOT-Reference archive into
+   ``slycot/src/SLICOT-Reference``
 
 Replace ``master`` with the release tag or branch name which you want to build.
 
 Clone the git repository
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Directly checkout the submodule, when cloning the git repository.
+Directly checkout the submodule, when cloning the git repository::
 
     git clone --recurse-submodules https://github.com/python-control/Slycot.git
 
-or if you forked the repository:
+or if you forked the repository::
 
     git clone --recurse-submodules https://github.com/<your-username>/Slycot.git
 
-If you already have a local checkout, but stikk need to init the submodule:
+If you already have a local checkout, but stikk need to init the submodule::
 
     git submodule init
     git submodule update
