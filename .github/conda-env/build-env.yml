@@ -1,4 +1,4 @@
 name: build-env
 dependencies:
-  - boa
-  - numpy!=1.23.0
+  - boa >=0.12
+  - numpy !=1.23.0
