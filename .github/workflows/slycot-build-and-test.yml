@@ -160,6 +160,7 @@ jobs:
           environment-file: .github/conda-env/build-env.yml
           miniforge-version: latest
           miniforge-variant: Mambaforge
+          mamba-version: '0.27.0' # keep in sync with corresponding boa version
           channel-priority: strict
           auto-update-conda: false
           auto-activate-base: false

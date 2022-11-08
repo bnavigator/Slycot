@@ -1,4 +1,4 @@
 name: build-env
 dependencies:
-  - boa >=0.12
+  - boa = 0.12 # keep in sync with corresponding mamba version
   - numpy !=1.23.0
