@@ -1,4 +1,4 @@
 name: build-env
 dependencies:
-  - boa
+  - conda-build
   - numpy !=1.23.0
