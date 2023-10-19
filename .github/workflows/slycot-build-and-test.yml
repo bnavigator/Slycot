@@ -62,19 +62,19 @@ jobs:
             bla_vendor: [ 'unset' ]
             include:
               - os: 'ubuntu'
-                python: '3.12'
+                python: '3.11'
                 bla_vendor: 'Generic'
               - os: 'ubuntu'
-                python: '3.12'
+                python: '3.11'
                 bla_vendor: 'OpenBLAS'
               - os: 'macos'
-                python: '3.12'
+                python: '3.11'
                 bla_vendor: 'Apple'
               - os: 'macos'
-                python: '3.12'
+                python: '3.11'
                 bla_vendor: 'Generic'
               - os: 'macos'
-                python: '3.12'
+                python: '3.11'
                 bla_vendor: 'OpenBLAS'
 
     steps:
@@ -143,7 +143,7 @@ jobs:
             - 'macos'
             - 'windows'
           python:
-            - '3.10'
+            - '3.9'
             - '3.11'
 
     steps:
